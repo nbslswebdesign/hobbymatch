@@ -20,14 +20,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="/" class="navbar-brand"><i class="fa fa-group"></i> HobbyMatch</a>
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <i class="fa fa-group"></i>
+            HobbyMatch
+          <% end %>
         </div>
         <div class="collapse navbar-collapse" id="main-nav-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/contacts/new">Contact Us</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/about">About Us</a></li>
+            <li><%= link_to "About Us", about_path %></li>
           </ul>
         </div>
      </div>

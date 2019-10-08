@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="text-center">Welcome to the HobbyMatch Community</h1>
+            <p class="text-center">Here you will find people with hobbies similar to yours, and maybe even find new hobbies yourself.</p>
+            <ul class="list-unstyled">
+                <% @users.each do |user| %>
+                    <% if user.profile %>
+                        <li>
+                            <div class="well row <%= cycle('white-bg', '')%> ">
+                                <div class="col-sm-4 text-center">
+                                    <% if user.profile.avatar %>
+                                        <%= link_to user do %>
+                                            <%= image_tag user.profile.avatar.url, class: 'user_index_avatar' %>
+                                        <% end %>
+                                    <% end %>
+                                </div>
+                                <div>
+                                    <%= link_to user do %>
+                                    <h3><%= user.profile.first_name %> <%= user.profile.last_name %></h3>
+                                    <p><%= user.profile.hobbies %></p>
+                                    <p><%= user.profile.contact_email %></p>
+                                    <% end %>
+                                </div> 
+                            </div>
+                        </li>
+                    <% end %>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
